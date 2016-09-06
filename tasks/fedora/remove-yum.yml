@@ -1,0 +1,6 @@
+---
+- name: remove copr registry repofile
+  become: yes
+  file:
+    path: "{{ copr_repository_repofile }}"
+    state: absent

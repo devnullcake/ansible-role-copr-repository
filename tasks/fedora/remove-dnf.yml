@@ -1,0 +1,6 @@
+---
+- name: remove fedora copr repository (dnf)
+  become: yes
+  command: "dnf -y copr remove {{ copr_repository }}"
+  args:
+    removes: "{{ copr_repository_repofile }}"

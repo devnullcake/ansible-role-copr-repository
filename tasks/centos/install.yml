@@ -1,0 +1,6 @@
+---
+- name: install centos copr repository
+  become: yes
+  get_url:
+    url: "{{ copr_repository_url }}/repo/epel-{{ ansible_distribution_version.split('.')[0] | int }}/{{ copr_repository_name }}-epel-{{ ansible_distribution_version | int }}.repo"
+    dest: "{{ copr_repository_repofile }}"

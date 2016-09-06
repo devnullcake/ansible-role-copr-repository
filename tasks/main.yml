@@ -1,0 +1,24 @@
+---
+- include: centos/install.yml
+  when:  ansible_distribution | lower  == "centos" and  copr_repository_action | lower  == "install"
+  tags:
+    - copr-repository
+    - copr-repository-install
+
+- include: centos/remove.yml
+  when:  ansible_distribution | lower  == "centos" and  copr_repository_action | lower  == "remove"
+  tags:
+    - copr-repository
+    - copr-repository-remove
+
+- include: fedora/install.yml
+  when:  ansible_distribution | lower  == "fedora" and  copr_repository_action | lower  == "install"
+  tags:
+    - copr-repository
+    - copr-repository-install
+
+- include: fedora/remove.yml
+  when:  ansible_distribution | lower  == "fedora" and  copr_repository_action | lower  == "remove"
+  tags:
+    - copr-repository
+    - copr-repository-remove

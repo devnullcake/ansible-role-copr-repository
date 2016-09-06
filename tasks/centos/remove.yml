@@ -1,0 +1,8 @@
+---
+- name: remove repofile
+  become: yes
+  file:
+    path: "{{ copr_repository_repofile }}"
+    state: absent
+  tags:
+    - copr-repository-remove

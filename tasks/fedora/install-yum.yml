@@ -1,0 +1,6 @@
+---
+- name: install fedora copr repository (yum)
+  become: yes
+  get_url:
+    url: "{{ copr_repository_url }}/repo/fedora-{{ ansible_distribution_version | int }}/{{ copr_repository_name }}-fedora-{{ ansible_distribution_version | int }}.repo"
+    dest: "{{ copr_repository_repofile }}"

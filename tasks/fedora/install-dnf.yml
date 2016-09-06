@@ -1,0 +1,12 @@
+---
+- name: install fedora copr plugin (dnf)
+  become: yes
+  package:
+    name: dnf-command(copr)
+    state: present
+
+- name: install fedora copr repository (dnf)
+  become: yes
+  command: "dnf -y copr enable {{ copr_repository }}"
+  args:
+    creates: "{{ copr_repository_repofile }}"

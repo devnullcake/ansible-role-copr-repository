@@ -1,0 +1,5 @@
+---
+copr_repository_action: install
+copr_repository_name: "{{ copr_repository | replace('/', '-') }}"
+copr_repository_url: "https://copr.fedorainfracloud.org/coprs/{{ copr_repository }}"
+copr_repository_repofile: "/etc/yum.repos.d/_copr_{{ copr_repository_name }}.repo"
