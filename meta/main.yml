@@ -1,0 +1,19 @@
+---
+dependencies: []
+
+galaxy_info:
+  author: "Arun Neelicattu"
+  description: "COPR Repository Configuration"
+  issue_tracker_url: https://github.com/devnullcake/ansible-role-copr-repository/issues
+  license: Apache
+  min_ansible_version: 2.0
+  platforms:
+    - name: Fedora
+      versions:
+        - all
+    - name: EL
+      versions:
+        - all
+  galaxy_tags:
+    - packagemanager:dnf:yum:repository
+    - fedora:copr
