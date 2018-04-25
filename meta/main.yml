@@ -6,7 +6,7 @@ galaxy_info:
   description: "COPR Repository Configuration"
   issue_tracker_url: https://github.com/devnullcake/ansible-role-copr-repository/issues
   license: Apache
-  min_ansible_version: 2.0
+  min_ansible_version: 2.3
   platforms:
     - name: Fedora
       versions:

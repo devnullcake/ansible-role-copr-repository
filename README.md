@@ -7,7 +7,7 @@ This role allows for the addition and removal of a [copr](https://copr.fedorainf
 Requirements
 ------------
 
-No additional requirements are enforced other than an a working Ansbile 2.0+ installation.
+No additional requirements are enforced other than an a working Ansbile 2.4+ installation.
 
 Role Variables
 --------------
