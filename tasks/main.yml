@@ -10,6 +10,6 @@
     message: "Unsupported action ('{{ copr_repository_action }}')"
 
 
-- include: "{{ ansible_distribution | lower }}/{{ copr_repository_action | lower }}.yml"
+- include_tasks: "{{ ansible_distribution | lower }}/{{ copr_repository_action | lower }}.yml"
   tags:
     - copr-repository

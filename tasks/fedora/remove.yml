@@ -1,11 +1,11 @@
 ---
-- include: remove-dnf.yml
+- include_tasks: remove-dnf.yml
   when: ansible_distribution_version|int >= 23
   tags:
     - copr-repository-remove
     - copr-repository-remove-yum
 
-- include: remove-yum.yml
+- include_tasks: remove-yum.yml
   when: ansible_distribution_version|int <= 22
   tags:
     - copr-repository-remove
