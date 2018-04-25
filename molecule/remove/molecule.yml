@@ -1,0 +1,29 @@
+---
+dependency:
+  name: galaxy
+  options:
+    role-file: molecule/resources/playbooks/docker/requirements.yml
+driver:
+  name: docker
+lint:
+  name: yamllint
+  enabled: False
+platforms:
+  - name: molecule-instance-copr-centos
+    image: centos:latest
+  - name: molecule-instance-copr-fedora
+    image: fedora:latest
+provisioner:
+  name: ansible
+  playbooks:
+    create: ../resources/playbooks/docker/create.yml
+    prepare: prepare.yml
+    destroy: ../resources/playbooks/docker/destroy.yml
+  lint:
+    name: ansible-lint
+scenario:
+  name: repository removal
+verifier:
+  name: testinfra
+  lint:
+    name: flake8

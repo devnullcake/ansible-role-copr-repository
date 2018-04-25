@@ -1,0 +1,11 @@
+---
+- name: converge
+  hosts: all
+  gather_facts: True
+  tasks:
+    - name: test repository installation
+      include_role:
+         name: ansible-role-copr-repository
+      vars:
+        copr_repository: "abn/keycloak"
+        copr_repository_action: "install"

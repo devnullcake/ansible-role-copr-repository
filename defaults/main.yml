@@ -1,5 +1,9 @@
 ---
+# valid actions are install, remove
 copr_repository_action: install
+
+# this expects copr_repository to be specified either as "user/repo" or "user-repo"
 copr_repository_name: "{{ copr_repository | replace('/', '-') }}"
+
 copr_repository_url: "https://copr.fedorainfracloud.org/coprs/{{ copr_repository }}"
 copr_repository_repofile: "/etc/yum.repos.d/_copr_{{ copr_repository_name }}.repo"

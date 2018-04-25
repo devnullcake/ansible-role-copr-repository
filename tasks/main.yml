@@ -1,24 +1,15 @@
 ---
-- include: centos/install.yml
-  when:  ansible_distribution | lower  == "centos" and  copr_repository_action | lower  == "install"
-  tags:
-    - copr-repository
-    - copr-repository-install
+- name: assert that platform is supported
+  assert:
+    that: ansible_distribution | lower in ["centos", "fedora"]
+    message: "Unsupported platform ('{{ ansible_distribution }}')"
 
-- include: centos/remove.yml
-  when:  ansible_distribution | lower  == "centos" and  copr_repository_action | lower  == "remove"
-  tags:
-    - copr-repository
-    - copr-repository-remove
+- name: assert that action is supported
+  assert:
+    that: copr_repository_action | lower in ["install", "remove"]
+    message: "Unsupported action ('{{ copr_repository_action }}')"
 
-- include: fedora/install.yml
-  when:  ansible_distribution | lower  == "fedora" and  copr_repository_action | lower  == "install"
-  tags:
-    - copr-repository
-    - copr-repository-install
 
-- include: fedora/remove.yml
-  when:  ansible_distribution | lower  == "fedora" and  copr_repository_action | lower  == "remove"
+- include: "{{ ansible_distribution | lower }}/{{ copr_repository_action | lower }}.yml"
   tags:
     - copr-repository
-    - copr-repository-remove

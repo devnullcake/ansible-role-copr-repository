@@ -1,0 +1,3 @@
+[submodule "molecule/resources"]
+	path = molecule/resources
+	url = git@github.com:abn/molecule-common-resources.git

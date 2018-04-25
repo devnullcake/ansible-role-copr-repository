@@ -1,0 +1,12 @@
+---
+- import_playbook: ../resources/playbooks/docker/prepare.yml
+
+- name: install repository
+  hosts: all
+  tasks:
+    - name: test repository removal
+      include_role:
+         name: ansible-role-copr-repository
+      vars:
+        copr_repository: "abn/keycloak"
+        copr_repository_action: "install"
