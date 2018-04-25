@@ -22,7 +22,7 @@ provisioner:
   lint:
     name: ansible-lint
 scenario:
-  name: repository removal
+  name: remove
 verifier:
   name: testinfra
   lint:
