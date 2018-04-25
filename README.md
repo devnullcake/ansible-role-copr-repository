@@ -1,6 +1,6 @@
 COPR Repository Configuration
 =============================
-[![Build Status](https://travis-ci.org/devnullcake/ansible-role-copr-repository.svg?branch=master)](https://travis-ci.org/devnullcake/ansible-role-acme-certificate) [![Ansible Role](https://img.shields.io/ansible/role/24945.svg)](https://galaxy.ansible.com/devnullcake/acme-certificate/)
+[![Build Status](https://travis-ci.org/devnullcake/ansible-role-copr-repository.svg?branch=master)](https://travis-ci.org/devnullcake/ansible-role-acme-certificate) [![Ansible Role](https://img.shields.io/ansible/role/25253.svg)](https://galaxy.ansible.com/devnullcake/acme-certificate/)
 
 This role allows for the addition and removal of a [copr](https://copr.fedorainfracloud.org/) repository from CentOS/Fedora hosts. This implementation is based on instructions provided [here](https://docs.pagure.org/copr.copr/how_to_enable_repo.html#how-to-enable-repo).
 
