@@ -38,14 +38,30 @@ Example Playbook
 
 Testing
 -------
-There are no automated tests defined for this role at the moment. Molecule tests will be added at a later date. Current `tox` execution validates source using [ansible-lint](https://github.com/willthames/ansible-lint).
+Before testing, you need to ensure that the submodules required have been cloned.
+```sh
+git submodule update --init --recursive
+```
+
+### Local Environment
+This role uses [Molecule](https://molecule.readthedocs.io/en/latest/) and docker instances to enable testing. You can run this locally on your development environment provided you have python installed and are running the docker daemon.
+
+```sh
+# install molecule and docker-py requirements
+pip install -r test-requirements.txt
+molecule test
+```
+
+This will as configured in the default molecule scenario, spin up containers of the supported distributions and execute a sample playbook.
 
 ### Tox
-This project has [tox](http://tox.readthedocs.io/en/latest/) configured to run against a clean environment. This can simply be run using tox.
+This project also has [tox](http://tox.readthedocs.io/en/latest/) configured to run against multiple ansible versions with [Molecule](https://molecule.readthedocs.io/en/latest/). This can simply be run using tox.
 
 ```sh
 tox
 ```
+
+Refer to the [Molecule documentation](https://molecule.readthedocs.io/en/latest/testing.html) and [tox documentation](http://tox.readthedocs.io/en/latest/) for advance usage instructions.
 
 License
 -------
